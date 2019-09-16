@@ -13,11 +13,11 @@ body {
     flex-direction: column;
     align-items: center;
     font-family: sans-serif;
-    background: linear-gradient(rgb(47, 150, 163),rgb(48,62, 143));
+    background: linear-gradient(rgb(48,62, 143),rgb(47, 150, 163));
     color: white;
 }
 
-.location, .temp__degree {
+.location, .temp__degree-section {
     display: flex;
     justify-content: space-around;
     width: 40%;
@@ -33,7 +33,7 @@ body {
     text-align: center;
 }
 
-.temp__degree {
+.temp__degree-section {
     height: 10vh;
     width: 100%;
     font-size: 32px;
@@ -41,7 +41,7 @@ body {
     cursor: pointer;
 }
 
-.temp-degree span {
+.temp__degree-section span {
     font-size: 1em;
 }
 

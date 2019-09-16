@@ -6,8 +6,8 @@ window.addEventListener('load', () => {
         tempTitle = document.querySelector('.temp__title'),
         iconCanvas = document.querySelector('.icon'),
         locationTimezone = document.querySelector('.location__timezone'),
-        tempDegree = document.querySelector('.temp__degree'),
-        tempSpan = document.querySelector('.temp__degree span')
+        tempDegreeSection = document.querySelector('.temp__degree-section'),
+        tempSpan = document.querySelector('.temp__degree-section span')
 
 
     if(navigator.geolocation) {
@@ -31,11 +31,24 @@ window.addEventListener('load', () => {
                 tempDescription.textContent = summary
                 locationTimezone.textContent = data.timezone
 
+                // Algoritmo por celsius
+
+                let celsius = ((temperature - 32) * (5 / 9)).toFixed(2)
+
                 // Set icon, API => https://darkskyapp.github.io/skycons/
                 setIcons(icon, iconCanvas)
 
                 // Change temperature to Celsius/F
 
+                tempDegreeSection.addEventListener('click', () => {
+                    if(tempSpan.textContent === "F") {
+                        tempSpan.textContent = "C"
+                        tempTitle.textContent = celsius
+                    } else {
+                        tempSpan.textContent = "F"
+                        tempTitle.textContent = temperature
+                    }
+                })
             }) 
         })
     } else {
