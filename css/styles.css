@@ -1,0 +1,56 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-family: sans-serif;
+    background: linear-gradient(rgb(47, 150, 163),rgb(48,62, 143));
+    color: white;
+}
+
+.location, .temp__degree {
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+    align-items: center;
+    text-align: center;
+    height: 30vh;
+}
+
+.temp {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.temp__degree {
+    height: 10vh;
+    width: 100%;
+    font-size: 32px;
+    margin-bottom: 2em;
+    cursor: pointer;
+}
+
+.temp-degree span {
+    font-size: 1em;
+}
+
+span {
+    text-align: left;
+    margin-left: .5em;
+}
+
+span::after {
+    content: "°";
+    margin-left: .2em;
+}
